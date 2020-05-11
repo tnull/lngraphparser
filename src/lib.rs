@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize, Deserializer};
 use serde_json::Error;
 use std::fmt::Display;
 use std::str::FromStr;
+use std::net::SocketAddr;
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 pub struct Graph {
@@ -23,7 +24,7 @@ pub struct Node {
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 pub struct Address {
     pub network: String,
-    pub addr: String,
+    pub addr: SocketAddr,
 }
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
@@ -113,7 +114,7 @@ mod tests {
         
         let address = Address { 
             network:"tcp".to_string(), 
-            addr: "67.166.1.116:9735".to_string(),
+            addr: FromStr::from_str("67.166.1.116:9735").unwrap(),
         };
 
         let node = Node { 
