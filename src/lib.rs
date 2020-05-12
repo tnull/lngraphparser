@@ -4,7 +4,6 @@ use serde::{Deserialize, Serialize, Deserializer};
 use serde_json::Error;
 use std::fmt::Display;
 use std::str::FromStr;
-use std::net::SocketAddr;
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 pub struct Graph {
@@ -21,10 +20,10 @@ pub struct Node {
     pub color: String
 }
 
-#[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Eq, PartialEq, Clone)]
 pub struct Address {
     pub network: String,
-    pub addr: SocketAddr,
+    pub addr: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
