@@ -1,6 +1,6 @@
-# `lngraphparser` -- Simply parse Lightning's network graph from JSON
+# lngraphparser: Simply parse Lightning's network graph from JSON
 
-[LND](https://github.com/lightningnetwork/lnd) with its `describegraph` functionality is an easy way to retrieve JSON-encoded data about the current state of Lightning's payment channel network. Somewhat regularly updated snapshots of this data can be found [here](https://gitlab.tu-berlin.de/rohrer/discharged-pc-data).
+[LND](https://github.com/lightningnetwork/lnd)'s `describegraph` functionality is an easy way to retrieve JSON-encoded data about the current state of Lightning's payment channel network. Somewhat regularly updated snapshots of this data can be found [here](https://git.tu-berlin.de/rohrer/discharged-pc-data).
 
 This simple library crate utilizes [serde_json](https://github.com/serde-rs/json) to parse the data into statically typed structs.
 
